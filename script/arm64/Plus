@@ -125,7 +125,6 @@ echo -e "\n\033[1;36mVÉRIFICATION DU LIEN... \033[0m" ; rm $_Ink/listARM >/dev/
         figlet "ALPHANNEC" | lolcat
         echo "SCRIPT EN DÉVELOPPEMENT !!" 
         echo -e "\033[01;31m━═━═━═━═━═━═━═━━═━═━═━═━═━═━═━═━━═━═━═━═━═━━═━═━═━═━━═━═━═━═━═━═━═━━\033[0m"
-        echo -e "\033[1;33mOPA DETECTAMOS..."
         echo -e "\033[01;31m━═━═━═━═━═━═━═━━═━═━═━═━═━═━═━═━━═━═━═━═━═━━═━═━═━═━━═━═━═━═━═━═━═━━\033[0m"
         echo -e "\033[1;33mDONNÉES UTILISATEUR TROUVÉES!"
         echo ""

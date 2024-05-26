@@ -12,7 +12,7 @@ SCOLOR='\033[0m'
 
 # - Verifica Execucao Como Root
 [[ "$EUID" -ne 0 ]] && {
-    echo -e "{RED}[x] VC DOIT EXECUTER EN TANT QU’UTILISATEUR ROOT !{SCOLOR}"
+    echo -e "{RED}[x] VC DOIT EXECUTER EN TANT QU'UTILISATEUR ROOT !{SCOLOR}"
     exit 1
 }
 

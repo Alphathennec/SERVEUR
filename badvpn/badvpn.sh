@@ -90,7 +90,7 @@ fun_udp2 () {
         sleep 1
     }
     fun_bar 'fun_stopbad'
-    echo -e "\n  \033[1;31mBADVPN S’EST ARRÊTÉ !\033[0m"
+    echo -e "\n  \033[1;31mBADVPN S'EST ARRÊTÉ !\033[0m"
     sleep 3
     menu
 }

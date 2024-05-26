@@ -1,17 +1,5 @@
 #!/bin/bash
 
-#-----------------------------------------------------------------------------------------------------------
-#	DATE:				27 mai 2024
-#	SCRIPT:				ShellBot.sh
-#	VERSION:				6.3.0
-#	REALISE POUR:	Juliano Santos [SHAMAN]
-#   RETRSANCRIPT PAR : ALPHANNEC
-#	PÁGINA:				http://www.shellscriptx.blogspot.com.br
-#	FANPAGE:			https://www.facebook.com/shellscriptx
-#	GITHUB:				https://github.com/shellscriptx
-# 	CONTACT:			setyurialphannec@gmail.com
-#
-
 				reduzindo o nível de dependências de pacotes externos.
 #-----------------------------------------------------------------------------------------------------------
 
