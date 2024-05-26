@@ -1,8 +1,8 @@
 #!/bin/bash
 clear
 #--------------------------
-# @TMYCOMNECTVPN
-# CANAL TELEGRAM @TMYCOMNECTVPN
+# @ALPHANNEC
+# CANAL TELEGRAM @ALPHANNEC
 #--------------------------
 
 # - Cores
@@ -12,7 +12,7 @@ SCOLOR='\033[0m'
 
 # - Verifica Execucao Como Root
 [[ "$EUID" -ne 0 ]] && {
-    echo -e "{RED}[x] VC PRECISA EXECULTAR COMO USUARIO ROOT !{SCOLOR}"
+    echo -e "{RED}[x] VC DOIT EXECUTER EN TANT QU’UTILISATEUR ROOT !{SCOLOR}"
     exit 1
 }
 
@@ -25,7 +25,7 @@ case "$(uname -m)" in
         arch='arm64'
         ;;
     *)
-        echo -e "${RED}[x] ARQUITETURA INCOMPATIVEL !${SCOLOR}"
+        echo -e "${RED}[x] ARCHITECTURE INCOMPATIBLE. !${SCOLOR}"
         exit 1
         ;;
 esac
@@ -34,21 +34,21 @@ esac
 if grep -qs "ubuntu" /etc/os-release; then
 	os_version=$(grep 'VERSION_ID' /etc/os-release | cut -d '"' -f 2 | tr -d '.')
     [[ "$os_version" -lt 1804 ]] && {
-        echo -e "${RED}[x] VERSAO DO UBUNTU INCOMPATIVEL !\n${YELLOW}[!] REQUER UBUNTU 18.04 OU SUPERIOR !${SCOLOR}"
+        echo -e "${RED}[x] Version d'ubuntu incompatible !\n${YELLOW}[!] Requiere UBUNTU 18.04 ou superieur !${SCOLOR}"
         exit 1
     }
 elif [[ -e /etc/debian_version ]]; then
 	os_version=$(grep -oE '[0-9]+' /etc/debian_version | head -1)
     [[ "$os_version" -lt 9 ]] && {
-        echo -e "${RED}[x] VERSAO DO DEBIAN INCOMPATIVEL !\n${YELLOW}[!] REQUER DEBIAN 9 OU SUPERIOR !${SCOLOR}"
+        echo -e "${RED}[x] Version de DEBIAN incompatible !\n${YELLOW}[!] Requiere DEBIAN 9 ou superieur!${SCOLOR}"
         exit 1
     }
 else
-    echo -e "${RED}[x] OS INCOMPATIVEL !\n${YELLOW}[!] REQUER DISTROS BASE DEBIAN/UBUNTU !${SCOLOR}"
+    echo -e "${RED}[x] Systeme incompatible !\n${YELLOW}[!] Requiere une distrubution de base DEBIAN/UBUNTU !${SCOLOR}"
     exit 1
 fi
 
-# - Atualiza Lista/Pacotes/Sistema
+# - Mises à jour Liste/Packages/Système
 dpkg --configure -a
 apt update -y && apt upgrade -y
 apt install unzip python3 -y
