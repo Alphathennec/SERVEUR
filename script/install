@@ -2,7 +2,7 @@
 clear
 #--------------------------
 # SCRIPR SSH-PLUS
-# CANAL TELEGRAM: @TMYCOMNECTVPN
+# CANAL TELEGRAM: @ALPHANNEC
 #--------------------------
 
 # - Cores
@@ -12,7 +12,7 @@ SCOLOR='\033[0m'
 
 # - Verifica Execucao Como Root
 [[ "$EUID" -ne 0 ]] && {
-    echo -e "{RED}[x] VC PRECISA EXECULTAR COMO USUARIO ROOT !{SCOLOR}"
+    echo -e "{RED}[x] VOUS DEVEZ EXECUTER EN TANT QU'UTILISATEUR ROOT !{SCOLOR}"
     exit 1
 }
 
@@ -25,7 +25,7 @@ case "$(uname -m)" in
         arch='arm64'
         ;;
     *)
-        echo -e "${RED}[x] ARQUITETURA INCOMPATIVEL !${SCOLOR}"
+        echo -e "${RED}[x] ARCHITECTURE INCOMPATIBLE. !${SCOLOR}"
         exit 1
         ;;
 esac
@@ -34,17 +34,17 @@ esac
 if grep -qs "ubuntu" /etc/os-release; then
 	os_version=$(grep 'VERSION_ID' /etc/os-release | cut -d '"' -f 2 | tr -d '.')
     [[ "$os_version" -lt 1804 ]] && {
-        echo -e "${RED}[x] VERSAO DO UBUNTU INCOMPATIVEL !\n${YELLOW}[!] REQUER UBUNTU 18.04 OU SUPERIOR !${SCOLOR}"
+        echo -e "${RED}[x] Version de UBUNTU incompatible !\n${YELLOW}[!] requiere UBUNTU 18.04 ou superieur !${SCOLOR}"
         exit 1
     }
 elif [[ -e /etc/debian_version ]]; then
 	os_version=$(grep -oE '[0-9]+' /etc/debian_version | head -1)
     [[ "$os_version" -lt 9 ]] && {
-        echo -e "${RED}[x] VERSAO DO DEBIAN INCOMPATIVEL !\n${YELLOW}[!] REQUER DEBIAN 9 OU SUPERIOR !${SCOLOR}"
+        echo -e "${RED}[x] Versio de DEBIAN incompatible !\n${YELLOW}[!] requiere DEBIAN 9 ou superieur !${SCOLOR}"
         exit 1
     }
 else
-    echo -e "${RED}[x] OS INCOMPATIVEL !\n${YELLOW}[!] REQUER DISTROS BASE DEBIAN/UBUNTU !${SCOLOR}"
+    echo -e "${RED}[x] Systeme incompatible !\n${YELLOW}[!] require un systeme de base DEBIAN/UBUNTU !${SCOLOR}"
     exit 1
 fi
 
@@ -60,4 +60,4 @@ sysctl -p -f /etc/sysctl.d/70-disable-ipv6.conf
 
 # - Execulta instalador
 [[ -e Plus ]] && rm Plus
-wget raw.githubusercontent.com/root719/TMY-SSH-PRO/main/script/${arch}/Plus && chmod 777 Plus && ./Plus
+wget raw.githubusercontent.com/Alphathennec/SERVEUR/main/script/${arch}/Plus && chmod 777 Plus && ./Plus
