@@ -40,7 +40,7 @@ if grep -qs "ubuntu" /etc/os-release; then
 elif [[ -e /etc/debian_version ]]; then
 	os_version=$(grep -oE '[0-9]+' /etc/debian_version | head -1)
     [[ "$os_version" -lt 9 ]] && {
-        echo -e "${RED}[x] Versio de DEBIAN incompatible !\n${YELLOW}[!] requiere DEBIAN 9 ou superieur !${SCOLOR}"
+        echo -e "${RED}[x] Version de DEBIAN incompatible !\n${YELLOW}[!] requiere DEBIAN 9 ou superieur !${SCOLOR}"
         exit 1
     }
 else

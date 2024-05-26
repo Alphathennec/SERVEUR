@@ -78,7 +78,7 @@ otimize_python() {
 figlet "ALPHANNEC" | lolcat
 echo ""
 echo ""
-echo -e "                       \033[05;31mSISTEMAS \033[05;33mOPERACIONAIS\033[0m"
+echo -e "                       \033[05;31mSYSTEME  \033[05;33mOPERATIONNEL\033[0m"
 echo ""
 echo -e "\033[1;31m• \033[1;33mUBUNTU 18-20 x64\033[0m 🐧"
 echo -e "\033[1;31m• \033[1;33mDEBIAN  9-11 x64\033[0m 🐧"
@@ -187,7 +187,7 @@ echo -e "\n\033[1;36mVÉRIFICATION DU LIEN... \033[0m" ; rm $_Ink/list > /dev/nu
     echo ""
     echo -e "              \033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mFINALISATION \033[1;33m[\033[1;31m!\033[1;33m] \033[0m"
     echo ""
-    echo -e "      \033[1;33mCCOMPLÉTER LES FONCTIONS ET LES DÉFINITIONS ! \033[0m"
+    echo -e "      \033[1;33mEn attente des fonctions et definitions ! \033[0m"
     echo ""
     fun_bar "$_Ink/list $_lnk $_Ink $_1nk $key"
     rm /bin/chuser > /dev/null 2>&1
