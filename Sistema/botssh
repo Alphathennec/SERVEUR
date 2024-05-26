@@ -4,7 +4,7 @@ clear
 source ShellBot.sh
 touch lista
 [[ -z $1 ]] && {
-    clear && echo "INFORME O TOKEN" && return 0
+    clear && echo "RAPPORT OU JETON" && return 0
 }
 [[ ! -e RESET ]] && touch RESET
 api_bot=$1
@@ -15,9 +15,9 @@ ShellBot.username
 menu() {
     local msg
         msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
-        msg+="<b>🤖 OLA SEJA BEM VINDO(a) 🤖</b>\n"
+        msg+="<b>🤖 BONJOUR BIENVENUE(a) 🤖</b>\n"
         msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-        msg+="Gere seu teste agora mesmo!"
+        msg+="Générez votre test maintenant!"
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
         --text "$(echo -e $msg)" \
         --reply_markup "$keyboard1" \
@@ -29,7 +29,7 @@ menu() {
 criarteste() {
     [[ $(grep -wc ${callback_query_from_id} lista) != '0' ]] && {
       ShellBot.sendMessage --chat_id ${callback_query_message_chat_id} \
-        --text "⚠️ VC JA CRIOU SSH HOJE ⚠️"
+        --text "⚠️ VOUS AVEZ DÉJÀ CRÉÉ SSH AUJOURD’HUI ⚠️"
       return 0
     }
     usuario=$(echo TESTE$(( RANDOM% + 999 )))
@@ -52,7 +52,7 @@ rm -rf /etc/SSHPlus/userteste/$usuario.sh" > /etc/SSHPlus/userteste/$usuario.sh
     echo ${callback_query_from_id} >> lista
     # - ENVIA O SSH
     ShellBot.sendMessage --chat_id ${callback_query_message_chat_id} \
-    --text "$(echo -e "✅ <b>Criado com sucesso</b> ✅\n\nUSUARIO: <code>$usuario</code>\nSENHA: <code>$senha</code>\n\n⏳ Expira em: $tempo Hora")" \
+    --text "$(echo -e "✅ <b>Créé avec succès</b> ✅\n\nUtilisateur: <code>$usuario</code>\nPass: <code>$senha</code>\n\n⏳ Expire dans: $tempo Hora")" \
     --parse_mode html
     return 0
 }
@@ -60,7 +60,7 @@ rm -rf /etc/SSHPlus/userteste/$usuario.sh" > /etc/SSHPlus/userteste/$usuario.sh
 #enviar app
 enviarapp() {
     ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-        --text "♻️ ENVIANDO APLICATIVO, AGUARDE..."
+        --text "♻️ ENVOI DE LA DEMANDE, VEUILLEZ PATIENTER..."
     ShellBot.sendDocument --chat_id ${callback_query_message_chat_id} \
         --document "@/root/app.apk" \
     return 0
@@ -78,8 +78,8 @@ infouser () {
 
 unset botao1
 botao1=''
-ShellBot.InlineKeyboardButton --button 'botao1' --line 1 --text '♻️ GERAR TESTE ♻️' --callback_data 'gerarssh'
-ShellBot.InlineKeyboardButton --button 'botao1' --line 3 --text '🔰 BAIXAR APLICATIVO 🔰' --callback_data 'appenviar'
+ShellBot.InlineKeyboardButton --button 'botao1' --line 1 --text '♻️ GÉNÉRER UN TEST ♻️' --callback_data 'gerarssh'
+ShellBot.InlineKeyboardButton --button 'botao1' --line 3 --text '🔰 TÉLÉCHARGER L'APPLICATION🔰' --callback_data 'appenviar'
 ShellBot.regHandleFunction --function criarteste --callback_data gerarssh
 ShellBot.regHandleFunction --function enviarapp --callback_data appenviar
 unset keyboard1
