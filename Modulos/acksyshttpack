@@ -4,7 +4,7 @@
 ####################################<
 user=$(whoami)
 if [ "$user" != "root" ]; then
-echo "DEVE SER EXECUTADO COMO ROOT! >> SUDO -I <<"
+echo "DOIT FONCTIONNER EN TANT QUE ROOT ! >> SUDO -I <<"
 fi
 #"1"
 #### "KERNEL" ###
