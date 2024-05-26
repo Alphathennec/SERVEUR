@@ -1,0 +1,6 @@
+#!/bin/bash
+clear
+figlet "TMY-SSH-PRO" | lolcat
+echo -e "\033[1;33mINICIANDO, INSTALADOR \033[0m"
+sleep 2s
+bash <(wget -qO- raw.githubusercontent.com/root719/TMY-SSH-PRO/main/ssh-plus)
